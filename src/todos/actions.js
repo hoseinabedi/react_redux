@@ -4,8 +4,8 @@ export const createTodo = text => ({
     payload: { text }
 })
 
-export const DELETE_TODO = 'DELETE_TODO';
-export const deleteTodo = text => ({
-    type: DELETE_TODO,
+export const REMOVE_TODO = 'REMOVE_TODO';
+export const removeTodo = text => ({
+    type: REMOVE_TODO,
     payload: { text }
 });
