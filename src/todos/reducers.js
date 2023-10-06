@@ -1,12 +1,22 @@
-import { CREATE_TODO, REMOVE_TODO } from "./actions";
+import { Types } from './Types';
+
 export const todos = (state = [], action) => {
     const { type, payload } = action;
+
     switch (type) {
-        case CREATE_TODO: {
-            return [...state, {payload, isCompleted: false}];
-        }
-        case REMOVE_TODO:
-            return state.filter(todo => todo.text!== payload);
-        default: return state;
+    case Types.CREATE_TODO: {
+        const { text } = payload;
+        const newTodo = {
+            text,
+            isCompleted: false,
+        };
+        return state.concat(newTodo);
+    }
+    case Types.REMOVE_TODO: {
+        const { text } = payload;
+        return state.filter(todo => todo.text !== text);
+    }
+    default:
+        return state;
     }
 }

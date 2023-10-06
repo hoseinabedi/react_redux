@@ -1,11 +1,12 @@
-export const CREATE_TODO = 'CREATE_TODO';
-export const createTodo = text => ({
-    type: CREATE_TODO,
-    payload: { text }
-})
+import { Types } from './Types';
 
-export const REMOVE_TODO = 'REMOVE_TODO';
+export const createTodo = text => ({
+    type: Types.CREATE_TODO,
+    payload: { text },
+});
+
+
 export const removeTodo = text => ({
-    type: REMOVE_TODO,
-    payload: { text }
+    type: Types.REMOVE_TODO,
+    payload: { text },
 });
