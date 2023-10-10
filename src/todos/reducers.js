@@ -16,6 +16,15 @@ export const todos = (state = [], action) => {
         const { text } = payload;
         return state.filter(todo => todo.text !== text);
     }
+    case Types.COMPELETED_TODO: {
+        const { text } = payload;
+        return state.map(todo => {
+            if (todo.text === text) {
+                return {...todo, isCompleted: true};
+            }
+            return todo;
+        });
+    }
     default:
         return state;
     }
