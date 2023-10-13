@@ -29,3 +29,17 @@ export const todos = (state = [], action) => {
         return state;
     }
 }
+
+export const isLoading = (state = [], action) => {
+    const { type } = action;
+    switch(type){
+        case LOAD_TODOS_IN_PROGRESS: {
+            return true;
+        }
+        case LOAD_TODOS_SUCCESS:
+        case LOAD_TODOS_ERROR:
+            return false;
+        default:
+            return state;
+    }
+}
