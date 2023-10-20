@@ -30,7 +30,7 @@ const NewTodoForm = ({ todos, onCreatePressed }) => {
     );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
     todos: state.todos,
 });
 
